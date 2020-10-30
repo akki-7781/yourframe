@@ -17,5 +17,11 @@
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
+  },
+  "keywords": [
+    "heroku"
+  ],
+  "engines": {
+    "node": "12.x"
   }
 }
