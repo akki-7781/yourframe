@@ -13,6 +13,7 @@ function limitCheck(file) {
     return true;
   }
 }
+
 function setdata(event) {
   imageData = event.files[0];
   console.log(event.files[0]);
@@ -37,6 +38,7 @@ function setdata(event) {
       const xhr = new XMLHttpRequest();
       xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE) {
+          alert("Image uploaded successfully");
           window.location.replace(window.location.href);
         }
       };
