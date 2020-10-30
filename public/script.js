@@ -6,38 +6,52 @@ function hasExtension(fileName, exts) {
   );
 }
 
+function limitCheck(file) {
+  if (file.size > 5 * 1024 * 1024) {
+    return false;
+  } else {
+    return true;
+  }
+}
 function setdata(event) {
   imageData = event.files[0];
   console.log(event.files[0]);
-  if (
-    hasExtension(imageData.name, [
-      ".jpg",
-      ".jpeg",
-      ".bmp",
-      ".gif",
-      ".png",
-      ".JPG",
-      ".JPEG",
-      ".BMP",
-      ".GIF",
-      ".PNG",
-    ])
-  ) {
-    var formData = new FormData();
-    formData.append("image", imageData);
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == XMLHttpRequest.DONE) {
-        window.location.replace(window.location.href);
-      }
-    };
-    xhr.withCredentials = true;
-    xhr.open("POST", `${window.location.href}image`);
-    xhr.send(formData);
+  // console.log(limitCheck(imageData));
+  if (limitCheck(imageData)) {
+    if (
+      hasExtension(imageData.name, [
+        ".jpg",
+        ".jpeg",
+        ".bmp",
+        ".gif",
+        ".png",
+        ".JPG",
+        ".JPEG",
+        ".BMP",
+        ".GIF",
+        ".PNG",
+      ])
+    ) {
+      var formData = new FormData();
+      formData.append("image", imageData);
+      const xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+          window.location.replace(window.location.href);
+        }
+      };
+      xhr.withCredentials = true;
+      xhr.open("POST", `${window.location.href}image`);
+      xhr.send(formData);
+    } else {
+      document.getElementsByTagName("input")[0].value = "";
+      imageData = null;
+      alert("only image need to be selected");
+    }
   } else {
     document.getElementsByTagName("input")[0].value = "";
     imageData = null;
-    alert("only image need to be selected");
+    alert("image size is out of limit");
   }
 }
 
