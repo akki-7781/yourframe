@@ -1,0 +1,21 @@
+{
+  "name": "visitors",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon --inspect server.js"
+  },
+  "author": "akshay chirandas",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.0",
+    "helmet": "^3.18.0",
+    "multer": "^1.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}

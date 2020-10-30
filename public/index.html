@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>screenfac.es</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css" media="all">
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body>
+  <header>
+    <h2>Gallery</h2>
+  </header>
+  <form>
+    <input id="myInput" onChange="setdata(this)" style="display:none" type="file">
+    <div class="upload-area">
+
+      <div id="upload-image" class="btn" onclick='document.getElementById("myInput").click();'><i class="fa fa-upload"
+          aria-hidden="true"></i>Upload</div>
+    </div>
+  </form>
+  <div class="imageDash container">
+    <div class="row">
+
+    </div>
+  </div>
+  <footer>
+    <h6>Fullstack Challenge - 2020</h6>
+  </footer>
+</body>
+<script src="script.js" async defer></script>
+
+</html>
